@@ -3,6 +3,8 @@ github.com/hanzoai/gochimp3 v0.0.0-20210305004051-da66ea724147 h1:gfRXBgmkTMt7yu
 github.com/hanzoai/gochimp3 v0.0.0-20210305004051-da66ea724147/go.mod h1:zJr4NZygb2gyqkQpZ2Yf/UzbOhIhVfLCj8ST925KPrI=
 github.com/njason/shouldwater v0.0.0-20221226030300-df18d3f96b63 h1:rVRf0Boo+RlXhET/roRANugYI4Pvx4+bC8/X3V1YIWg=
 github.com/njason/shouldwater v0.0.0-20221226030300-df18d3f96b63/go.mod h1:qa9hGF/0jx6CQqRC5Rs3Iq1LUVQ3OOy/k+ToFpQHxXo=
+github.com/njason/tomorrowio-api-client v0.0.0-20221226041327-b1269f47d4fb h1:Ti5iFdlO/gDOMt1WA5JLeqWccwfbN2NeQg3HDc8og/Y=
+github.com/njason/tomorrowio-api-client v0.0.0-20221226041327-b1269f47d4fb/go.mod h1:/31aJHudvJP6kulgl/TRFNIoLln28KQiNhb+h/iW/DM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=

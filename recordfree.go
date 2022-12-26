@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/njason/shouldwater"
+	"github.com/njason/tomorrowio-api-client"
 )
 
 // RecordFreeTimelines reads in the maximum for free tier weather data into a csv file
@@ -26,14 +27,14 @@ func RecordFreeTimelines(filename string, lat string, lng string, tomorrowIoApiK
 
 	writer := csv.NewWriter(file)
 	if writeHeaders {
-		err = writer.Write(append([]string{"startTime"}, timelineFields...))
+		err = writer.Write(append([]string{"startTime"}, []string{"temperature", "humidity", "windSpeed", "precipitationIntensity"}...))
 		if err != nil {
 			return err
 		}
 	}
 
-	tomorrowIoRequest := NewTimelinesRequest(fmt.Sprintf("%s, %s", lat, lng), "metric", "1h", "nowMinus6h", "nowMinus1h")
-	resp, err := DoTimelinesRequest(tomorrowIoApiKey, tomorrowIoRequest)
+	tomorrowIoRequest := tomorrowio.NewTimelinesRequest(fmt.Sprintf("%s, %s", lat, lng), "metric", "1h", "nowMinus6h", "nowMinus1h")
+	resp, err := tomorrowio.DoTimelinesRequest(tomorrowIoApiKey, tomorrowIoRequest)
 	if err != nil {
 		return err
 	}

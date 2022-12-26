@@ -11,6 +11,7 @@ import (
 	"gopkg.in/yaml.v3"
 
 	"github.com/njason/shouldwater"
+	"github.com/njason/tomorrowio-api-client"
 )
 
 type Config struct {
@@ -44,8 +45,8 @@ func main() {
 			historicalRecords = historicalRecords[len(historicalRecords)-shouldwater.HoursInWeek:]
 		}
 
-		forecastRequest := NewTimelinesRequest(fmt.Sprintf("%s, %s", config.Lat, config.Lng), "metric", "1h", "nowPlus1h", "nowPlus5d")
-		forecastRecordsRaw, err := DoTimelinesRequest(config.TomorrowioApiKey, forecastRequest)
+		forecastRequest := tomorrowio.NewTimelinesRequest(fmt.Sprintf("%s, %s", config.Lat, config.Lng), "metric", "1h", "nowPlus1h", "nowPlus5d")
+		forecastRecordsRaw, err := tomorrowio.DoTimelinesRequest(config.TomorrowioApiKey, forecastRequest)
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
