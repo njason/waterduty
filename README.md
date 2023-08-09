@@ -11,6 +11,7 @@ A low cost solution for automating alerting tree stewards to water their nearby 
 Copy the `config-template.yaml` into a new file `config.yaml`, and update the following fields:
 
 - `tomorrowioApiKey`: After creating a free tomorrow.io account, find the `Secret Key` [here](https://app.tomorrow.io/development/keys).
+- `weatherApiKey`: After creating a free weatherapi.com account, find the API Key [here](https://www.weatherapi.com/my/)
 - `mailchimp.apiKey`: After creating a free mailchimp account, create an API key [here](https://admin.mailchimp.com/account/api/)
 - `mailchimp.templateId`: [Create a template](https://mailchimp.com/help/create-a-template-with-the-template-builder/) to use for alerting tree stewards to water. [This](https://us13.admin.mailchimp.com/templates/share?id=174361973_a7f368481da096f6c0df_us13) is the template used in NYC you can use as a starting point.
 - `mailchimp.listId`: Use [this guide](https://mailchimp.com/help/find-audience-id/) to find the list/audience ID.
