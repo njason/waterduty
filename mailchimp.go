@@ -23,7 +23,7 @@ func createAndSendCampaign(apiKey string, templateId uint, listId string) error 
 			SubjectLine: "It's time to water the trees!",
 			Title: "NYC unestablished tree watering alert",
 			FromName: "Work for Nature",
-			ReplyTo: "noreply@workfornature.org",
+			ReplyTo: "noreply@waterduty.org",
 			ToName: "NYC Tree Stewards",
 			TemplateId: templateId,
 		},

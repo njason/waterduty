@@ -5,6 +5,8 @@ github.com/njason/shouldwater v0.0.0-20221226030300-df18d3f96b63 h1:rVRf0Boo+RlX
 github.com/njason/shouldwater v0.0.0-20221226030300-df18d3f96b63/go.mod h1:qa9hGF/0jx6CQqRC5Rs3Iq1LUVQ3OOy/k+ToFpQHxXo=
 github.com/njason/tomorrowio-api-client v0.0.0-20221226041327-b1269f47d4fb h1:Ti5iFdlO/gDOMt1WA5JLeqWccwfbN2NeQg3HDc8og/Y=
 github.com/njason/tomorrowio-api-client v0.0.0-20221226041327-b1269f47d4fb/go.mod h1:/31aJHudvJP6kulgl/TRFNIoLln28KQiNhb+h/iW/DM=
+github.com/njason/weather-api-client v0.0.0-20230807044440-56d6fadd75f3 h1:UJBENcd6VDYy5C0lNlnGoUM+evWxGVKEguoODfZugCM=
+github.com/njason/weather-api-client v0.0.0-20230807044440-56d6fadd75f3/go.mod h1:+PoJ1IEbGcrxdcC69ONmuK2TyZVIymiW1kHo26CVwEk=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
