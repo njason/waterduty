@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"path/filepath"
-	"strings"
 	"time"
 
 	"gopkg.in/yaml.v3"
@@ -111,16 +109,4 @@ func loadConfig() (Config, error) {
 	}
 
 	return config, nil
-}
-
-func archiveRecordsFile(recordsFile string) error {
-	fileName := strings.TrimSuffix(recordsFile, filepath.Ext(recordsFile))
-	archiveFile := fmt.Sprintf("%s_archive.csv", fileName)
-	err := os.Rename(recordsFile, archiveFile)
-
-	if err != nil {
-		return err
-	}
-
-	return nil
 }
