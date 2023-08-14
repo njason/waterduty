@@ -22,21 +22,13 @@ Copy the `config-template.yaml` into a new file `config.yaml`, and update the fo
 To build a binary, run this from the repo root directory:
 
 ```
-go build -o shouldwater .
+go build .
 ```
 
 ### Deploying
 
 The binary will need to be in the same directory as `config.yaml` to run.
 
-The application binary is intented to run in two modes, the default action of determining if the alert email should go out, or if data should be recorded. Both modes should be run as a scheduled task on a computer that stays on such as servers. The application should only be run during times of the year when trees are not dormant, from early spring to early fall.
+The application binary is intented to run as a scheduled task on a computer that stays on such as servers. The application should be scheduled to run once a week to decide if an alert goes out. It is recommended to on Fridays so tree stewards can water on the weekends. The cron for this would be `0 16 * 4-10 FRI cd /path/to && ./shouldwater 1>shouldwater.log 2>&1`. Note that the application should only be run during times of the year when trees are not dormant, from early spring to early fall.
 
 For macOS and linux, use [cron](https://phoenixnap.com/kb/set-up-cron-job-linux). For Windows use [Task Scheduler](https://www.windowscentral.com/how-create-automated-task-using-task-scheduler-windows-10).
-
-#### Record mode
-
-Record every 6 hours, which is the limit of free historical data from Tomorrow.io.  The cron would be `59 0,6,12,18 * 4-10 * cd /path/to && ./shouldwater record 1>shouldwater.log 2>&1`. 
-
-#### Default mode
-
-Once a week run in default mode to decide if an alert goes out. It is recommended to run default mode on Fridays so tree stewards can water on the weekends. The cron for this would be `0 16 * 4-10 FRI cd /path/to && ./shouldwater 1>shouldwater.log 2>&1`.
