@@ -21,8 +21,6 @@ type Config struct {
 	
 	Lat         float64 `yaml:"lat"`
 	Lng         float64 `yaml:"lng"`
-
-	LogLevel		string	`yaml:"logLevel"`
 }
 
 func main() {
