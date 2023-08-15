@@ -1,6 +1,6 @@
-# Watering notifier
+# WaterDuty - The tree watering stewardship notification tool
 
-A low cost solution for automating alerting tree stewards to water their nearby unestablished trees (less than two years old) and gardens during periods of low rainfall. This application uses forecasted and recent historical weather data to determine if watering is needed. This solutions uses [tomorrow.io](https://www.tomorrow.io/) for weather data and [mailchimp](https://mailchimp.com/) for emailing alerts.
+A low cost solution for automating alerting tree stewards to water their nearby unestablished trees (less than two years old) and gardens during periods of low rainfall. This application uses forecasted and recent historical weather data to determine if watering is needed. This solutions uses [tomorrow.io](https://www.tomorrow.io/) and [weatherapi.com](https://www.weatherapi.com/) for weather data and [mailchimp](https://mailchimp.com/) for emailing alerts.
 
 [Guide for watering unestablished trees](https://vimeo.com/416031708#t=5m35s).
 
