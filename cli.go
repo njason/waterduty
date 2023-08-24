@@ -23,6 +23,8 @@ type Config struct {
 	Lng         float64 `yaml:"lng"`
 }
 
+const FiveGallonBucket = 18.93  // in liters
+
 func main() {
 	var testMode = flag.Bool("test", false, "Will not send notifications")
 	flag.Parse()
@@ -42,13 +44,14 @@ func main() {
 		log.Fatalln(err.Error())
 	}
 
-	shouldWater, err := shouldwater.ShouldWater(historicalRecords, forecastRecords)
+	amountToWater, err := shouldwater.ShouldWater(historicalRecords, forecastRecords)
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
 
-	if shouldWater {
-		log.Println("Should water")
+	// less than a quarter of a bucket is not worth watering
+	if amountToWater >= FiveGallonBucket / 4 {
+		log.Printf("Should water %f buckets", amountToWater / FiveGallonBucket)
 
 		if !*testMode {
 			err = createAndSendCampaign(config.MailChimp.ApiKey, config.MailChimp.TemplateId, config.MailChimp.ListId)
