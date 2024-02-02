@@ -54,6 +54,8 @@ func main() {
 		log.Printf("Should water %f buckets", amountToWater / FiveGallonBucket)
 
 		if !*testMode {
+			log.Printf("Sending out watering prompt via MailChimp");
+
 			err = createAndSendCampaign(config.MailChimp.ApiKey, config.MailChimp.TemplateId, config.MailChimp.ListId)
 			if err != nil {
 				log.Fatalln(err.Error())

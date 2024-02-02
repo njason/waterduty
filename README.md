@@ -17,13 +17,9 @@ Copy the `config-template.yaml` into a new file `config.yaml`, and update the fo
 - `mailchimp.listId`: Use [this guide](https://mailchimp.com/help/find-audience-id/) to find the list/audience ID.
 - `lat`, `lng`: The coordinates of where to run. You can use [Google Maps](https://support.google.com/maps/answer/18539) to find coordinates, format `lat, lng`.
 
-### Build
+### Testing
 
-To build a binary, run this from the repo root directory:
-
-```
-go build .
-```
+To test without sending emails, use the `-test` flag while running.
 
 ### Deploying
 

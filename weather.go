@@ -27,7 +27,7 @@ func getHistoricalRecords(weatherApiKey string, lat float64, lng float64) ([]sho
 			return []shouldwater.WeatherRecord{}, err
 		}
 
-		for _, record := range historicalRecordsRaw.Forecast.Forecastday[0].Hour {
+		for _, record := range historicalRecordsRaw.Forecast.Forecastday[0].Hours {
 			timestamp, err := time.Parse("2006-01-02 15:04", record.Time)
 			if err != nil {
 				return []shouldwater.WeatherRecord{}, err
