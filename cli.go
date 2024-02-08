@@ -31,22 +31,22 @@ func main() {
 
 	config, err := loadConfig()
 	if err != nil {
-		log.Fatalln(err.Error())
+		log.Fatalln(err)
 	}
 
 	historicalRecords, err := getHistoricalRecords(config.WeatherApiKey, config.Lat, config.Lng)
 	if err != nil {
-		log.Fatalln(err.Error())
+		panic(err)
 	}
 
 	forecastRecords, err := getForecastRecords(config.TomorrowioApiKey, config.Lat, config.Lng)
 	if err != nil {
-		log.Fatalln(err.Error())
+		panic(err)
 	}
 
 	amountToWater, err := shouldwater.ShouldWater(historicalRecords, forecastRecords)
 	if err != nil {
-		log.Fatalln(err.Error())
+		log.Fatalln(err)
 	}
 
 	// less than a quarter of a bucket is not worth watering
@@ -58,7 +58,7 @@ func main() {
 
 			err = createAndSendCampaign(config.MailChimp.ApiKey, config.MailChimp.TemplateId, config.MailChimp.ListId)
 			if err != nil {
-				log.Fatalln(err.Error())
+				panic(err)
 			}
 		}
 	} else {
