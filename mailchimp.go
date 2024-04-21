@@ -22,7 +22,7 @@ func createAndSendCampaign(apiKey string, templateId uint, listId string) error 
 		Settings: gochimp3.CampaignCreationSettings{
 			SubjectLine: "It's time to water the trees!",
 			Title: "NYC unestablished tree watering alert",
-			FromName: "Work for Nature",
+			FromName: "Water Duty",
 			ReplyTo: "noreply@waterduty.org",
 			ToName: "NYC Tree Stewards",
 			TemplateId: templateId,
