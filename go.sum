@@ -5,6 +5,8 @@ github.com/njason/shouldwater v0.0.0-20221226030300-df18d3f96b63 h1:rVRf0Boo+RlX
 github.com/njason/shouldwater v0.0.0-20221226030300-df18d3f96b63/go.mod h1:qa9hGF/0jx6CQqRC5Rs3Iq1LUVQ3OOy/k+ToFpQHxXo=
 github.com/njason/shouldwater v0.0.0-20221226032820-27890fcfa43a h1:msUUQMdlF/H2LumcQ1kXHGlJvNQPXaQQqRl37lwUMLU=
 github.com/njason/shouldwater v0.0.0-20221226032820-27890fcfa43a/go.mod h1:qa9hGF/0jx6CQqRC5Rs3Iq1LUVQ3OOy/k+ToFpQHxXo=
+github.com/njason/shouldwater v0.0.0-20240706172750-8fe6fa11ec7b h1:Ki9Yy7kNaUo4rin6VMQ3/fE/JX96lNQI1aY+hzpmLIA=
+github.com/njason/shouldwater v0.0.0-20240706172750-8fe6fa11ec7b/go.mod h1:tYOZTkiuQa5dDzTIXnhLLz6if0XtxgRb/OI8hLUOufY=
 github.com/njason/tomorrowio-api-client v0.0.0-20221226041327-b1269f47d4fb h1:Ti5iFdlO/gDOMt1WA5JLeqWccwfbN2NeQg3HDc8og/Y=
 github.com/njason/tomorrowio-api-client v0.0.0-20221226041327-b1269f47d4fb/go.mod h1:/31aJHudvJP6kulgl/TRFNIoLln28KQiNhb+h/iW/DM=
 github.com/njason/tomorrowio-api-client v0.0.0-20230825034513-f3be17512ee4 h1:s/2Iv1OBUmQgllXY7RlkcTpXzY+fls4WxS5yBogfxhs=
@@ -13,6 +15,8 @@ github.com/njason/weather-api-client v0.0.0-20230807044440-56d6fadd75f3 h1:UJBEN
 github.com/njason/weather-api-client v0.0.0-20230807044440-56d6fadd75f3/go.mod h1:+PoJ1IEbGcrxdcC69ONmuK2TyZVIymiW1kHo26CVwEk=
 github.com/njason/weather-api-client v0.0.0-20240202035839-4a1f8d084118 h1:WgDkh1LPhH2FpS4dMKsdlXaWwOqZW/BPLr33UQW3BBk=
 github.com/njason/weather-api-client v0.0.0-20240202035839-4a1f8d084118/go.mod h1:+PoJ1IEbGcrxdcC69ONmuK2TyZVIymiW1kHo26CVwEk=
+github.com/njason/weather-api-client v0.0.0-20240205010250-eb71057eafdf h1:JSuSJp6lwG0MjY9YBEmDyij1unv/EZpsNzVYznQ8eSM=
+github.com/njason/weather-api-client v0.0.0-20240205010250-eb71057eafdf/go.mod h1:+PoJ1IEbGcrxdcC69ONmuK2TyZVIymiW1kHo26CVwEk=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
