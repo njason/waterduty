@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
-	"time"
 	"log"
+	"time"
 
 	"github.com/njason/shouldwater"
 	"github.com/njason/tomorrowio-api-client"
@@ -35,10 +35,10 @@ func getHistoricalRecords(weatherApiKey string, lat float64, lng float64) ([]sho
 
 			if now.After(timestamp) && weekAgo.Before(timestamp) {
 				historicalRecords = append(historicalRecords, shouldwater.WeatherRecord{
-					Timestamp: timestamp,
-					Temperature: record.TempC,
-					Humidity: float64(record.Humidity),
-					WindSpeed: record.WindKph,
+					Timestamp:     timestamp,
+					Temperature:   record.TempC,
+					Humidity:      float64(record.Humidity),
+					WindSpeed:     record.WindKph,
 					Precipitation: record.PrecipMm,
 				})
 				totalPrecipitation += record.PrecipMm
@@ -53,7 +53,7 @@ func getHistoricalRecords(weatherApiKey string, lat float64, lng float64) ([]sho
 		historicalRecords = historicalRecords[len(historicalRecords)-shouldwater.HoursInWeek:]
 	}
 
-	log.Printf("Historical precipitation: %.2f inches\n", totalPrecipitation / 25.4)
+	log.Printf("Historical precipitation: %.2f inches\n", totalPrecipitation/25.4)
 
 	return historicalRecords, nil
 }
@@ -70,16 +70,16 @@ func getForecastRecords(tomorrowioApiKey string, lat float64, lng float64) ([]sh
 	var forecastRecords []shouldwater.WeatherRecord
 	for _, record := range forecastRecordsRaw.Data.Timelines[0].Intervals {
 		forecastRecords = append(forecastRecords, shouldwater.WeatherRecord{
-			Timestamp: record.StartTime,
-			Temperature: record.Values.Temperature,
-			Humidity: record.Values.Humidity,
-			WindSpeed: record.Values.WindSpeed,
+			Timestamp:     record.StartTime,
+			Temperature:   record.Values.Temperature,
+			Humidity:      record.Values.Humidity,
+			WindSpeed:     record.Values.WindSpeed,
 			Precipitation: record.Values.PrecipitationIntensity,
 		})
 		totalPrecipitation += record.Values.PrecipitationIntensity
 	}
 
-	log.Printf("Forecast precipitation: %.2f inches\n", totalPrecipitation / 25.4)
+	log.Printf("Forecast precipitation: %.2f inches\n", totalPrecipitation/25.4)
 
 	return forecastRecords, nil
 }

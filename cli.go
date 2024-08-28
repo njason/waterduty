@@ -5,25 +5,25 @@ import (
 	"log"
 	"os"
 
-	"gopkg.in/yaml.v3"
 	"github.com/njason/shouldwater"
+	"gopkg.in/yaml.v3"
 )
 
 type Config struct {
 	TomorrowioApiKey string `yaml:"tomorrowioApiKey"`
-	WeatherApiKey string `yaml:"weatherApiKey"`
+	WeatherApiKey    string `yaml:"weatherApiKey"`
 
-	MailChimp        struct {
+	MailChimp struct {
 		ApiKey     string `yaml:"apiKey"`
 		TemplateId uint   `yaml:"templateId"`
 		ListId     string `yaml:"listId"`
 	}
-	
-	Lat         float64 `yaml:"lat"`
-	Lng         float64 `yaml:"lng"`
+
+	Lat float64 `yaml:"lat"`
+	Lng float64 `yaml:"lng"`
 }
 
-const FiveGallonBucket = 18.93  // in liters
+const FiveGallonBucket = 18.93 // in liters
 
 func main() {
 	var testMode = flag.Bool("test", false, "Will not send notifications")
@@ -50,11 +50,11 @@ func main() {
 	}
 
 	// less than a quarter of a bucket is not worth watering
-	if amountToWater >= FiveGallonBucket / 4 {
-		log.Printf("Should water %f buckets", amountToWater / FiveGallonBucket)
+	if amountToWater >= FiveGallonBucket/4 {
+		log.Printf("Should water %f buckets", amountToWater/FiveGallonBucket)
 
 		if !*testMode {
-			log.Printf("Sending out watering prompt via MailChimp");
+			log.Printf("Sending out watering prompt via MailChimp")
 
 			err = createAndSendCampaign(config.MailChimp.ApiKey, config.MailChimp.TemplateId, config.MailChimp.ListId)
 			if err != nil {

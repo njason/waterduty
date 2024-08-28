@@ -15,20 +15,20 @@ func createAndSendCampaign(apiKey string, templateId uint, listId string) error 
 		Recipients: gochimp3.CampaignCreationRecipients{
 			ListId: listId,
 			SegmentOptions: gochimp3.CampaignCreationSegmentOptions{
-				Match: "all",
+				Match:      "all",
 				Conditions: []string{},
 			},
 		},
 		Settings: gochimp3.CampaignCreationSettings{
 			SubjectLine: "It's time to water the trees!",
-			Title: "NYC unestablished tree watering alert",
-			FromName: "Water Duty",
-			ReplyTo: "noreply@waterduty.org",
-			ToName: "NYC Tree Stewards",
-			TemplateId: templateId,
+			Title:       "NYC unestablished tree watering alert",
+			FromName:    "Water Duty",
+			ReplyTo:     "noreply@waterduty.org",
+			ToName:      "NYC Tree Stewards",
+			TemplateId:  templateId,
 		},
 	}
-	
+
 	createCampaignResponse, err := client.CreateCampaign(&createCampaignRequest)
 	if err != nil {
 		return err
