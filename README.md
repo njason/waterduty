@@ -25,6 +25,6 @@ To test without sending emails, use the `-test` flag while running.
 
 The binary will need to be in the same directory as `config.yaml` to run.
 
-The application should be scheduled to run once a week to decide if an alert goes out. It is recommended to run on Fridays so tree stewards can water over the weekends. The cron for this would be `0 16 * 4-10 FRI cd /path/to && ./waterduty 1>waterduty.log 2>&1`. Note that the application should only be run during times of the year when trees are not dormant, from early spring to early fall.
+The application should be scheduled to run once a week to decide if an alert goes out. It is recommended to run on Fridays so tree stewards can water over the weekends. The cron for this would be `0 16 * 4-10 FRI cd /path/to && ./waterduty 1>>waterduty.log 2>&1`. Note that the application should only be run during times of the year when trees are not dormant, from early spring to early fall.
 
 To setup automatic scheduling on a server, for macOS and linux use [cron](https://phoenixnap.com/kb/set-up-cron-job-linux). For Windows use [Task Scheduler](https://www.windowscentral.com/how-create-automated-task-using-task-scheduler-windows-10).
