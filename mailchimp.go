@@ -3,23 +3,19 @@ package main
 import (
 	"time"
 
-	"github.com/hanzoai/gochimp3"
+	"github.com/njason/mailchimp_client"
 )
 
 func createAndSendCampaign(apiKey string, templateId uint, listId string) error {
-	client := gochimp3.New(apiKey)
+	client := mailchimp_client.New(apiKey)
 	client.Timeout = 60 * time.Second
 
-	createCampaignRequest := gochimp3.CampaignCreationRequest{
-		Type: gochimp3.CAMPAIGN_TYPE_REGULAR,
-		Recipients: gochimp3.CampaignCreationRecipients{
+	createCampaignRequest := mailchimp_client.CampaignCreationRequest{
+		Type: mailchimp_client.CAMPAIGN_TYPE_REGULAR,
+		Recipients: mailchimp_client.CampaignCreationRecipients{
 			ListId: listId,
-			SegmentOptions: gochimp3.CampaignCreationSegmentOptions{
-				Match:      "all",
-				Conditions: []string{},
-			},
 		},
-		Settings: gochimp3.CampaignCreationSettings{
+		Settings: mailchimp_client.CampaignCreationSettings{
 			SubjectLine: "It's time to water the trees!",
 			Title:       "NYC unestablished tree watering alert",
 			FromName:    "Water Duty",
