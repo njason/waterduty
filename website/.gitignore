@@ -1,1 +1,2 @@
-./set_env_vars.ps1
+set_env_vars.ps1
+locations.db
