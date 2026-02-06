@@ -3,8 +3,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/hanzoai/gochimp3 v0.0.0-20241127054040-6051f77e24f1 h1:uQGUlQsmBvZmfUeRgZS8BkUdlPbF2VA0GqKMnUop+Fc=
 github.com/hanzoai/gochimp3 v0.0.0-20241127054040-6051f77e24f1/go.mod h1:zJr4NZygb2gyqkQpZ2Yf/UzbOhIhVfLCj8ST925KPrI=
-github.com/njason/mailchimp_client v0.0.0-20240908154532-cd4a9ef3fcba h1:ijfFokFArthror39IFuRuPC26WMJ9j+TY/V40CY7Cek=
-github.com/njason/mailchimp_client v0.0.0-20240908154532-cd4a9ef3fcba/go.mod h1:Pk0RGjBoHKGwvZi4gT2RlJcFKsEPLocoyI6qHrqNnMQ=
+github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
+github.com/kr/text v0.1.0 h1:45sCR5RtlFHMR4UwH9sdQ5TC8v0qDQCHnXt+kaKSTVE=
 github.com/njason/shouldwater v0.0.0-20240706172750-8fe6fa11ec7b h1:Ki9Yy7kNaUo4rin6VMQ3/fE/JX96lNQI1aY+hzpmLIA=
 github.com/njason/shouldwater v0.0.0-20240706172750-8fe6fa11ec7b/go.mod h1:tYOZTkiuQa5dDzTIXnhLLz6if0XtxgRb/OI8hLUOufY=
 github.com/njason/tomorrowio-api-client v0.0.0-20230825034513-f3be17512ee4 h1:s/2Iv1OBUmQgllXY7RlkcTpXzY+fls4WxS5yBogfxhs=
@@ -21,10 +21,10 @@ github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5
 github.com/stretchr/testify v1.7.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/stretchr/testify v1.8.0/go.mod h1:yNjHg4UonilssWZ8iaSj1OCr/vHnekPRkoO+kdMU+MU=
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
-github.com/stretchr/testify v1.9.0 h1:HtqpIVDClZ4nwg75+f6Lvsy/wHu+3BoSGCbBAcpTsTg=
 github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
-gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
+github.com/stretchr/testify v1.10.0 h1:Xv5erBjTwe/5IxqUQTdXv5kgmIvbHo3QQyRwhJsOfJA=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 h1:YR8cESwS4TdDjEe65xsg0ogRM/Nc3DYOhEAlW+xobZo=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
 gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=

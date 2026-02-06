@@ -1,0 +1,12 @@
+# For local dev (use dev provider):
+$env:AUTH_SECRET = "your-secret-key"
+
+# For Google OAuth (optional):
+#$env:GOOGLE_CID = "your-client-id"
+#$env:GOOGLE_CSECRET = "your-client-secret"
+
+# For Mapbox (required):
+$env:MAPBOX_TOKEN = "your-mapbox-token"
+
+# Optional:
+$env:BASE_URL = "http://localhost:8080"

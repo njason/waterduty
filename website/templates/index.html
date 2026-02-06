@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Map</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0 }
+    #map { position: absolute; top: 50px; bottom: 0; width: 100% }
+    header { height: 50px; padding: 8px 12px; background: #111; color: #fff }
+    .controls { position: absolute; top: 60px; left: 10px; z-index: 2; background: rgba(255,255,255,0.9); padding:8px; border-radius:4px }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Social Map — set your location</span>
+    <span style="float:right">
+      <a href="/auth/dev/login?from=/">Login (dev)</a>
+      &nbsp;|&nbsp;
+      <a href="/auth/google/login?from=/">Login (google)</a>
+      &nbsp;|&nbsp;
+      <a href="/auth/logout">Logout</a>
+    </span>
+  </header>
+  <div id="map"></div>
+
+  <div class="controls">
+    <div>Click on map to select location. Then press Save.</div>
+    <button id="saveBtn">Save location</button>
+    <div id="status"></div>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script>
+    mapboxgl.accessToken = '{{.MapboxToken}}';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-98.5795,39.8283],
+      zoom: 3
+    });
+
+    let marker = null;
+    function setMarker(lng, lat) {
+      if (marker) marker.remove();
+      marker = new mapboxgl.Marker({draggable:true}).setLngLat([lng, lat]).addTo(map);
+      map.flyTo({center: [lng, lat], zoom: 12});
+    }
+
+    map.on('click', function(e){
+      setMarker(e.lngLat.lng, e.lngLat.lat);
+    });
+
+    // load existing location
+    fetch('/api/location').then(res => {
+      if (res.status === 200) return res.json();
+      throw new Error('no-location');
+    }).then(data => {
+      setMarker(data.lon, data.lat);
+    }).catch(()=>{
+      // not logged or no location yet
+    });
+
+    document.getElementById('saveBtn').addEventListener('click', function(){
+      if (!marker) { alert('Pick a location first'); return }
+      const lnglat = marker.getLngLat();
+      fetch('/api/location', {method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({lat: lnglat.lat, lon: lnglat.lng})})
+      .then(res => {
+        if (res.status === 204) {
+          document.getElementById('status').innerText = 'Saved.';
+        } else if (res.status === 401) {
+          document.getElementById('status').innerText = 'Not logged in. Please login.';
+        } else {
+          document.getElementById('status').innerText = 'Save failed: ' + res.status;
+        }
+      }).catch(err => document.getElementById('status').innerText = err.message)
+    })
+  </script>
+</body>
+</html>
